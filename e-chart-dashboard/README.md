@@ -18,18 +18,29 @@ Line Chart with Dropdown: The application provides a line chart component powere
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Usage
-Line Chart:
-## Navigate to the Line Chart section.
-Use the dropdown to select a cryptocurrency (Ethereum, Dogecoin, Solana and etc..).
-The line chart will display historical price trends for the selected cryptocurrency.
-
 ## Tech Stack
 Next.js
 Material-UI
 Apache ECharts
 
 We welcome contributions to improve the Elegant Crypto Dashboard application. Feel free to fork the repository, make improvements, and submit pull requests.
+
+## Usage
+Line Chart:
+## Navigate to the Line Chart section.
+Use the dropdown to select a cryptocurrency (Ethereum, Dogecoin, Solana and etc..).
+The line chart will display historical price trends for the selected cryptocurrency.
+
+## Here is some snap shots for easy understanding
+##### Landing page with Loading....
+![Landing page](https://i.ibb.co/Gvr1xjw/Landing-Page.jpg)
+
+##### Dropdown Data....
+![dropdown](https://i.ibb.co/fS5Sqjt/Dropdown-Main-jpeg.png)
+
+##### Multiple data selected....
+![Multi Data](https://i.ibb.co/qn3jFCL/Dropdown.jpg)
+![Selcted data](https://i.ibb.co/BZTrZQ7/Multi-select.jpg)
 
 
 ## Learn More
