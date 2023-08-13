@@ -9,13 +9,13 @@ import Select from "@mui/material/Select";
 import Chip from "@mui/material/Chip";
 import CancelIcon from "@mui/icons-material/Cancel";
 
-const ITEM_HEIGHT = 48;
-const ITEM_PADDING_TOP = 10;
+const HEIGHT = 48;
+const PADDING_TOP = 10;
 
 const Props = {
   PaperProps: {
     style: {
-      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      maxHeight: HEIGHT * 4.5 + PADDING_TOP,
       width: 200,
     },
   },

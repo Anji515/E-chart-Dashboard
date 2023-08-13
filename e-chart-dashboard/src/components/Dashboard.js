@@ -47,7 +47,11 @@ const DashBoard = ({ apiEndpoints = [] }) => {
               index={index}
               item={item}
               />
-              ))):<img  width={'700px'} style={{margin:'140px auto', borderRadius:'16px', height:'450px'}} src='https://www.infiniteblocktech.com/img/home/home_01.gif' alt='loader'/>}
+              ))):(<div style={{margin: '120px auto'}}>
+                <h1 style={{ marginBottom:'20px',fontSize:'22px',textAlign:'center',color:'orange', fontWeight:'bolder', fontFamily:'cursive'}}>Welcome to Elegant Crypto Dashboard</h1>
+                <img  width={'700px'} style={{ borderRadius:'16px',margin:'auto', height:'450px'}} src='https://www.infiniteblocktech.com/img/home/home_01.gif' alt='loader'/>
+                </div>
+                )}
       </div>
     </div>
   );
