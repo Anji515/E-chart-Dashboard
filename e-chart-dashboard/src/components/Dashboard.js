@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import EChartComponent from "./ChartData";
 
 const DashBoard = ({ apiEndpoints = [] }) => {
-  //   const apiEndpoints = ['ethereum', 'dogecoin', 'solana'];
 
   const [data, setData] = useState(apiEndpoints);
   
@@ -45,7 +44,7 @@ const DashBoard = ({ apiEndpoints = [] }) => {
               key={Date.now() + Math.random()}
               apiEndpoints={apiEndpoints}
               index={index}
-              item={item}
+              data={item}
               />
               ))):(<div style={{margin: '120px auto'}}>
                 <h1 style={{ marginBottom:'20px',fontSize:'22px',textAlign:'center',color:'orange', fontWeight:'bolder', fontFamily:'cursive'}}>Welcome to Elegant Crypto Dashboard</h1>

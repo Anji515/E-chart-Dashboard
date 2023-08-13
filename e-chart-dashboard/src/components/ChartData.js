@@ -1,13 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactECharts from 'echarts-for-react';
 import { Box } from '@mui/material';
 
-const EChartComponent = ({ item, apiEndpoints, index }) => {
-  const chartRef = useRef(null);
+const EChartComponent = ({ data, apiEndpoints, index }) => {
+
   const [option,setOption]=useState({})
 
   useEffect(() => {
-    const myChart = item?.prices?.map(entry => ({
+    const myChart = data?.prices?.map(entry => ({
         name: new Date(entry[0]).toLocaleString('en-US', { month: 'long', year: 'numeric' }),
         value: entry[1],
       }));
