@@ -51,7 +51,7 @@ const DashBoard = ({ apiEndpoints = [] }) => {
               index={index}
               item={item}
               />
-              ))):<img src='https://www.infiniteblocktech.com/img/home/home_01.gif' alt='loader'/>}
+              ))):<img width={'700px'} src='https://www.infiniteblocktech.com/img/home/home_01.gif' alt='loader'/>}
       </div>
     </div>
   );

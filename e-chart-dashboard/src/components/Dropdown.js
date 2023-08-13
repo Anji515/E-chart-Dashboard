@@ -7,6 +7,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
+import CancelIcon from "@mui/icons-material/Cancel";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -42,16 +43,11 @@ export default function Dropdown({ BitCoins, setBitCoins }) {
     );
   };
 
-  const handleDelete = (chipToDelete) => () => {
-    setBitCoins((prevBitCoins) =>
-      prevBitCoins.filter((chip) => chip !== chipToDelete)
-    );
-  };
 
   return (
     <div>
-      <FormControl sx={{ m: 1, width: '90%' }}>
-        <InputLabel id="demo-multiple-chip-label">Selct Crypto</InputLabel>
+      <FormControl sx={{ m: 1, border:'1px solid white', width: '90%' }}>
+        <InputLabel style={{color:"white"}} id="demo-multiple-chip-label">Selct Crypto</InputLabel>
         <Select
           labelId="demo-multiple-chip-label"
           id="demo-multiple-chip"
@@ -60,18 +56,26 @@ export default function Dropdown({ BitCoins, setBitCoins }) {
           onChange={handleChange}
           input={<OutlinedInput 
           color='primary'
-          id="select-multiple-chip" label="Selct Crypto" />}
+          style={{paddingTop:'10px'}}
+          id="select-multiple-chip"/>}
           renderValue={(selected) => (
             <Box sx={{ display: 'flex', color:'white', flexWrap: 'wrap', gap: 0.5 }}>
               {selected.map((value) => (
                 <Chip
-                  key={value}
-                  label={value}
-                  // variant="outlined"
-                  color="success"
-                  size="small"
-                  onDelete={handleDelete(value)}
-                />
+                key={value}
+                label={value}
+                color="success"
+                onDelete={() =>
+                  setBitCoins(
+                    BitCoins.filter((item) => item !== value)
+                  )
+                }
+                deleteIcon={
+                  <CancelIcon
+                    onMouseDown={(event) => event.stopPropagation()}
+                  />
+                }
+              />
               ))}
             </Box>
           )}
