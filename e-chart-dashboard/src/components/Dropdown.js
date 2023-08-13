@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import OutlinedInput from '@mui/material/OutlinedInput';
@@ -10,22 +10,23 @@ import Chip from '@mui/material/Chip';
 import CancelIcon from "@mui/icons-material/Cancel";
 
 const ITEM_HEIGHT = 48;
-const ITEM_PADDING_TOP = 8;
+const ITEM_PADDING_TOP = 10;
+
 const Props = {
   PaperProps: {
     style: {
       maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 250,
+      width: 200,
     },
   },
 };
 
-const names = ['Ethereum', 'Solana', 'Cosmos', 'Osmosis', 'Dogecoin'];
+const coins = ['Ethereum', 'Solana', 'Cosmos', 'Osmosis', 'Dogecoin'];
 
-function getTheme(name, personName, theme) {
+function getTheme(coin, personName, theme) {
   return {
     fontWeight:
-      personName.indexOf(name) === -1
+      personName.indexOf(coin) === -1
         ? theme.typography.fontWeightRegular
         : theme.typography.fontWeightMedium,
   };
@@ -46,7 +47,7 @@ export default function Dropdown({ BitCoins, setBitCoins }) {
 
   return (
     <div>
-      <FormControl sx={{ m: 1, border:'1px solid white', width: '90%' }}>
+      <FormControl sx={{ m: 1, border:'1px solid white', borderRadius:'5px', width: '100%' }}>
         <InputLabel style={{color:"white"}} id="demo-multiple-chip-label">Selct Crypto</InputLabel>
         <Select
           labelId="demo-multiple-chip-label"
@@ -59,7 +60,7 @@ export default function Dropdown({ BitCoins, setBitCoins }) {
           style={{paddingTop:'10px'}}
           id="select-multiple-chip"/>}
           renderValue={(selected) => (
-            <Box sx={{ display: 'flex', color:'white', flexWrap: 'wrap', gap: 0.5 }}>
+            <Box sx={{ display: 'flex', color:'white', flexWrap: 'wrap', gap: 2 }}>
               {selected.map((value) => (
                 <Chip
                 key={value}
@@ -81,13 +82,13 @@ export default function Dropdown({ BitCoins, setBitCoins }) {
           )}
           MenuProps={Props}
         >
-          {names.map((name) => (
+          {coins.map((coin) => (
             <MenuItem
-              key={name}
-              value={name}
-              style={getTheme(name, BitCoins, theme)}
+              key={coin}
+              value={coin}
+              style={getTheme(coin, BitCoins, theme)}
             >
-              {name}
+              {coin}
             </MenuItem>
           ))}
         </Select>

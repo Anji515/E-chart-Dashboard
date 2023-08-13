@@ -7,7 +7,7 @@ export default function Home() {
   const [BitCoins, setBitCoins] = useState([])
 
   return (
-    <main className="grid p-10">
+    <main className="margin-auto width-100% p-10 hight-100vh">
       <Dropdown BitCoins={BitCoins} setBitCoins={setBitCoins}/>
       <DashBoard apiEndpoints={BitCoins} />
     </main>

@@ -5,11 +5,23 @@ const DashBoard = ({ apiEndpoints = [] }) => {
   //   const apiEndpoints = ['ethereum', 'dogecoin', 'solana'];
 
   const [data, setData] = useState(apiEndpoints);
+  const [hovered, setHovered] = useState(false);
 
+  const handleMouseEnter = () => {
+    setHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setHovered(false);
+  };
+
+  const fontSize = hovered ? '22px' : '20px';
+  const color = hovered ? 'white' : 'yellow'
+
+  
   async function fetchDataFromEndpoints(endpoints) {
-    const newArray = [];
-
-    for (const endpoint of endpoints) {
+    let newArray = [];
+    for (let endpoint of endpoints) {
       try {
         const resp = await fetch(
           `https://api.coingecko.com/api/v3/coins/${endpoint.toLowerCase()}/market_chart?vs_currency=usd&days=365&interval=daily`
@@ -21,8 +33,7 @@ const DashBoard = ({ apiEndpoints = [] }) => {
         newArray.push(null);
       }
     }
-
-    return newArray;
+    return newArray
   }
 
   useEffect(() => {
@@ -37,10 +48,23 @@ const DashBoard = ({ apiEndpoints = [] }) => {
   return (
 
     <div >
-      <h1>DashBoard</h1>
+      <h1
+      style={{
+        fontSize,
+        color: color,
+        padding: '20px',
+        textAlign: 'center',
+        textDecoration: 'underline',
+        textDecorationColor: 'grey',
+        cursor: 'pointer',
+        transition: 'font-size 0.3s ease-in-out',
+      }}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      Elegant Crypto
+    </h1>
       <div style={{
-        // display : "grid",
-        // gridTemplateColumns: "repeat(2,1fr)",
         gap : "10px"
       }}>
         {data.length > 0 ?
@@ -51,7 +75,7 @@ const DashBoard = ({ apiEndpoints = [] }) => {
               index={index}
               item={item}
               />
-              ))):<img width={'700px'} src='https://www.infiniteblocktech.com/img/home/home_01.gif' alt='loader'/>}
+              ))):<img width={'700px'} style={{margin:'auto', height:'500px', padding:'30px'}} src='https://www.infiniteblocktech.com/img/home/home_01.gif' alt='loader'/>}
       </div>
     </div>
   );
