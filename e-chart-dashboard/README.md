@@ -40,6 +40,8 @@ The line chart will display historical price trends for the selected cryptocurre
 
 ##### Multiple data selected....
 ![Multi Data](https://i.ibb.co/qn3jFCL/Dropdown.jpg)
+
+#### Onclicking cancel icon selected item removed from the list and also component
 ![Selcted data](https://i.ibb.co/BZTrZQ7/Multi-select.jpg)
 
 
