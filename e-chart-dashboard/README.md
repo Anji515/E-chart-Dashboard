@@ -1,6 +1,6 @@
 ## Elegant Crypto Dashboard Application
 
-Welcome to the Elegant Crypto Dashboard application, developed by Pyor. This dashboard allows users to visualize cryptocurrency price data using Apache ECharts. Users can choose different cryptocurrencies and view their historical price trends over different time periods. The application also provides an easy-to-use interface for creating customizable dashboard pages with various components.
+Welcome to the Elegant Crypto Dashboard application, developed by Pyor. This dashboard allows users to visualize cryptocurrency price data using Apache ECharts. Users can choose different cryptocurrencies and view their historical price trends over different time periods. The application also provides an easy-to-use interface for getting dashboard data with various components.
 
 
 ## Getting Started
