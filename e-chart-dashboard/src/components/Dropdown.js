@@ -1,12 +1,12 @@
-import React from 'react';
-import { useTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import Chip from '@mui/material/Chip';
+import React from "react";
+import { useTheme } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import Chip from "@mui/material/Chip";
 import CancelIcon from "@mui/icons-material/Cancel";
 
 const ITEM_HEIGHT = 48;
@@ -21,7 +21,7 @@ const Props = {
   },
 };
 
-const coins = ['Ethereum', 'Solana', 'Cosmos', 'Osmosis', 'Dogecoin'];
+const coins = ["Ethereum", "Solana", "Cosmos", "Osmosis", "Dogecoin"];
 
 function getTheme(coin, personName, theme) {
   return {
@@ -39,42 +39,57 @@ export default function Dropdown({ BitCoins, setBitCoins }) {
     const {
       target: { value },
     } = event;
-    setBitCoins(
-      typeof value === 'string' ? value.split(',') : value
-    );
+    setBitCoins(typeof value === "string" ? value.split(",") : value);
   };
 
-
   return (
-    <div>
-      <FormControl sx={{ m: 1, border:'1px solid white', borderRadius:'5px', width: '100%' }}>
-        <InputLabel style={{color:"white"}} id="demo-multiple-chip-label">Selct Crypto</InputLabel>
+    <div style={{  }}>
+      <FormControl
+        sx={{
+          m: 1,
+          border: "1px solid white",
+          borderRadius: "5px",
+          width: "95%",
+          top: 60, position: "fixed", zIndex: 99, backgroundColor:'#10123D'
+        }}
+      >
+        <InputLabel
+          style={{
+            color: "white",
+            fontWeight: "bolder",
+            backgroundColor: "#10123D",
+            position: "absolute",
+            zIndex: 1,
+          }}
+        >
+          Selct Crypto
+        </InputLabel>
         <Select
           labelId="demo-multiple-chip-label"
           id="demo-multiple-chip"
           multiple
           value={BitCoins}
           onChange={handleChange}
-          input={<OutlinedInput 
-          id="select-multiple-chip"/>}
+          input={<OutlinedInput id="select-multiple-chip" />}
           renderValue={(selected) => (
-            <Box sx={{ display: 'flex', color:'white', flexWrap: 'wrap', gap: 2 }}>
+            <Box
+              sx={{ display: "flex", color: "white", flexWrap: "wrap", gap: 2 }}
+            >
               {selected.map((value) => (
                 <Chip
-                key={value}
-                label={value}
-                color="success"
-                onDelete={() =>
-                  setBitCoins(
-                    BitCoins.filter((item) => item !== value)
-                  )
-                }
-                deleteIcon={
-                  <CancelIcon
-                    onMouseDown={(event) => event.stopPropagation()}
-                  />
-                }
-              />
+                  key={value}
+                  label={value}
+                  color="success"
+                  style={{ fontWeight: "bold" }}
+                  onDelete={() =>
+                    setBitCoins(BitCoins.filter((item) => item !== value))
+                  }
+                  deleteIcon={
+                    <CancelIcon
+                      onMouseDown={(event) => event.stopPropagation()}
+                    />
+                  }
+                />
               ))}
             </Box>
           )}

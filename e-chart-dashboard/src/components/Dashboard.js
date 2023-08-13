@@ -36,7 +36,8 @@ const DashBoard = ({ apiEndpoints = [] }) => {
 
     <div >
       <div style={{
-        gap : "10px"
+        width: '90%',
+        margin:'auto',
       }}>
         {data.length > 0 ?
           (data.map((item, index) => (
@@ -46,7 +47,7 @@ const DashBoard = ({ apiEndpoints = [] }) => {
               index={index}
               item={item}
               />
-              ))):<img width={'700px'} style={{margin:'auto', height:'500px', padding:'30px'}} src='https://www.infiniteblocktech.com/img/home/home_01.gif' alt='loader'/>}
+              ))):<img  width={'700px'} style={{margin:'140px auto', borderRadius:'16px', height:'450px'}} src='https://www.infiniteblocktech.com/img/home/home_01.gif' alt='loader'/>}
       </div>
     </div>
   );
