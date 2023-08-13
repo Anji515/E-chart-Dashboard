@@ -5,19 +5,6 @@ const DashBoard = ({ apiEndpoints = [] }) => {
   //   const apiEndpoints = ['ethereum', 'dogecoin', 'solana'];
 
   const [data, setData] = useState(apiEndpoints);
-  const [hovered, setHovered] = useState(false);
-
-  const handleMouseEnter = () => {
-    setHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setHovered(false);
-  };
-
-  const fontSize = hovered ? '22px' : '20px';
-  const color = hovered ? 'white' : 'yellow'
-
   
   async function fetchDataFromEndpoints(endpoints) {
     let newArray = [];
@@ -48,22 +35,6 @@ const DashBoard = ({ apiEndpoints = [] }) => {
   return (
 
     <div >
-      <h1
-      style={{
-        fontSize,
-        color: color,
-        padding: '20px',
-        textAlign: 'center',
-        textDecoration: 'underline',
-        textDecorationColor: 'grey',
-        cursor: 'pointer',
-        transition: 'font-size 0.3s ease-in-out',
-      }}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      Elegant Crypto
-    </h1>
       <div style={{
         gap : "10px"
       }}>

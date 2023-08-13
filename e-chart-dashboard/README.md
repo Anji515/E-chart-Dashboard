@@ -1,22 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Elegant Crypto Dashboard Application
+
+Welcome to the Elegant Crypto Dashboard application, developed by Pyor. This dashboard allows users to visualize cryptocurrency price data using Apache ECharts. Users can choose different cryptocurrencies and view their historical price trends over different time periods. The application also provides an easy-to-use interface for creating customizable dashboard pages with various components.
+
 
 ## Getting Started
+Clone the repository: git clone <https://github.com/Anji515/E-chart-Dashboard/tree/main/e-chart-dashboard>
 
-First, run the development server:
+Install dependencies: 
+```npm install```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Start the development server: 
+```npm run dev``` 
+
+Access the application in your browser at http://localhost:3000
+Features
+Line Chart with Dropdown: The application provides a line chart component powered by Apache ECharts. Users can choose from different cryptocurrencies (Ethereum, Dogecoin, Solana and etc..) using a dropdown menu and view their price trends over time.
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Usage
+Line Chart:
+## Navigate to the Line Chart section.
+Use the dropdown to select a cryptocurrency (Ethereum, Dogecoin, Solana and etc..).
+The line chart will display historical price trends for the selected cryptocurrency.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Tech Stack
+Next.js
+Material-UI
+Apache ECharts
+
+We welcome contributions to improve the Elegant Crypto Dashboard application. Feel free to fork the repository, make improvements, and submit pull requests.
+
 
 ## Learn More
 
@@ -32,3 +46,15 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Limitation : 
+
+Please note the following limitation of the Elegant Crypto Dashboard application:
+
+#### Initial Load Time: 
+The application might experience a delay during the initial load due to considerations related to the free deployed version on Vercel. However, once the application is up and running, it should perform smoothly and provide the intended functionality.
+We apologize for any inconvenience this limitation may cause.
+
+## Thank You!
+We would like to extend our heartfelt gratitude to you for using the Elegant Crypto Dashboard application. 
+Your support and engagement mean a lot to me, and thrilled to have you as a part of it.

@@ -13,9 +13,6 @@ const EChartComponent = ({ item, apiEndpoints, index }) => {
       }));
     
       setOption({
-        title: {
-          text: 'Prices Data',
-        },
         xAxis: {
           type: 'category',
           boundaryGap: false,
@@ -35,7 +32,7 @@ const EChartComponent = ({ item, apiEndpoints, index }) => {
   }, []);
 
   return (
-  <Box>
+  <Box style={{height:'500px', border:'0px solid red', boxShadow:"rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px", padding:'10px', marginBottom:'50px', backgroundColor:'#202256'}}>
   <h1
   style={{
     fontSize : "20px",
@@ -45,8 +42,8 @@ const EChartComponent = ({ item, apiEndpoints, index }) => {
     textDecoration:'underline',
     textDecorationColor:'grey'
   }}
-  >{apiEndpoints[index]}</h1>
-  <ReactECharts option={option}/>
+  >{apiEndpoints[index]} Data</h1>
+  <ReactECharts style={{height:'400px'}} option={option}/>
   </Box>
   );
 };

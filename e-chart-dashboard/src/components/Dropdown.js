@@ -56,8 +56,6 @@ export default function Dropdown({ BitCoins, setBitCoins }) {
           value={BitCoins}
           onChange={handleChange}
           input={<OutlinedInput 
-          color='primary'
-          style={{paddingTop:'10px'}}
           id="select-multiple-chip"/>}
           renderValue={(selected) => (
             <Box sx={{ display: 'flex', color:'white', flexWrap: 'wrap', gap: 2 }}>
